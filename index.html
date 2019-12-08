@@ -18,8 +18,13 @@
       </div>
       <div class="product-info">
         <h1>{{product}}</h1>
-        <a :href="link" target="_blank">Go to
-          Youtube!</a>
+        <p>This Item is
+          <span v-if="onSale" style="color: blue;">On Sale!</span>
+          <span v-else style="color:red;">Off Sale!</span>
+        </p>
+        <p v-if="inventory > 10">In Stock</p>
+        <p v-else-if="inventory <= 10 &&inventory > 0">Running Low!</p>
+        <p v-else>Out of Stock</p>
       </div>
 
     </div>
